@@ -72,16 +72,6 @@
     	<groupId>org.apache.camel</groupId>
     	<artifactId>camel-cdi</artifactId>
     </dependency>
-<!-- 	<dependency> -->
-<!-- 	  <groupId>org.apache.deltaspike.cdictrl</groupId> -->
-<!-- 	  <artifactId>deltaspike-cdictrl-weld</artifactId> -->
-<!-- 	  <version>1.8.1</version> -->
-<!-- 	</dependency> -->
-<!-- 	<dependency> -->
-<!-- 	  <groupId>org.jboss.weld.se</groupId> -->
-<!-- 	  <artifactId>weld-se</artifactId> -->
-<!-- 	  <version>2.4.6.Final</version> -->
-<!-- 	</dependency> -->
     <dependency>
     	<groupId>org.apache.camel</groupId>
     	<artifactId>camel-jackson</artifactId>
@@ -148,9 +138,20 @@
         <version>${version.maven-bundle-plugin}</version>
         <extensions>true</extensions>
         <configuration>
-          <instructions>
-            <Bundle-SymbolicName>beansUses</Bundle-SymbolicName>
-            <Bundle-Name>Empty Camel Spring Example [beansUses]</Bundle-Name></instructions></configuration>
+          <useCDI>true</useCDI>
+        </configuration>
+        <dependencies>
+			<dependency>
+				<groupId>org.apache.deltaspike.cdictrl</groupId>
+				<artifactId>deltaspike-cdictrl-weld</artifactId>
+				<version>1.8.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.weld.se</groupId>
+				<artifactId>weld-se</artifactId>
+				<version>2.4.6.Final</version>
+			</dependency>
+		</dependencies>
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
